@@ -5,6 +5,7 @@ import {
   useGetInstructorsQuery,
   useGetInstructorLecturesQuery,
 } from "../../../redux/features/lectureSchedulerApi";
+import Link from "next/link";
 
 export default function InstructorDashboard({ params }) {
   const { instructorId } = params;

@@ -21,7 +21,9 @@ export default function InstructorLoginPage() {
 
     try {
       const instructor = await getInstructorByEmail(email).unwrap();
+      console.log(`/instructor/${instructor._id}`);
       router.push(`/instructor/${instructor._id}`);
+      console.log(`/instructor/${instructor._id}`);
     } catch (err) {
       console.error("Login failed:", err);
       setError("Instructor not found. Please check the email.");
