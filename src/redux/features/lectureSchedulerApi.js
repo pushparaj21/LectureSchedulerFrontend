@@ -2,7 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const lectureSchedulerApi = createApi({
   reducerPath: "lectureSchedulerApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3001/api" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://lecture-scheduler-backend-xndf.onrender.com/api",
+  }),
   tagTypes: ["Courses", "Instructors", "Lectures", "LecturesbyId"],
   endpoints: (builder) => ({
     // 📘 COURSES
