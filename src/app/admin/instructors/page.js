@@ -1,88 +1,10 @@
-// "use client";
-// import { useState } from "react";
-// import {
-//   useGetInstructorsQuery,
-//   useCreateInstructorMutation,
-// } from "../../../redux/features/lectureSchedulerApi";
-
-// export default function InstructorsPage() {
-//   const { data: instructors = [], isLoading, error } = useGetInstructorsQuery();
-//   const [createInstructor] = useCreateInstructorMutation();
-
-//   const [form, setForm] = useState({ name: "", email: "" });
-//   const [formError, setFormError] = useState("");
-
-//   const handleChange = (e) => {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     // Basic validation
-//     if (!form.name || !form.email) {
-//       setFormError("Both name and email are required.");
-//       return;
-//     }
-
-//     try {
-//       await createInstructor(form).unwrap();
-//       setForm({ name: "", email: "" });
-//       setFormError("");
-//     } catch (err) {
-//       console.error("Error creating instructor:", err);
-//       setFormError("Failed to create instructor.");
-//     }
-//   };
-
-//   if (isLoading) return <p>Loading instructors...</p>;
-//   if (error) return <p>Error loading instructors</p>;
-
-//   return (
-//     <div className="p-4 max-w-2xl mx-auto">
-//       <h2 className="text-xl font-semibold mb-4">Add Instructor</h2>
-
-//       <form onSubmit={handleSubmit} className="space-y-2 mb-6">
-//         <input
-//           className="border p-2 w-full"
-//           placeholder="Name"
-//           name="name"
-//           value={form.name}
-//           onChange={handleChange}
-//         />
-//         <input
-//           className="border p-2 w-full"
-//           placeholder="Email"
-//           name="email"
-//           type="email"
-//           value={form.email}
-//           onChange={handleChange}
-//         />
-//         {formError && <p className="text-red-500 text-sm">{formError}</p>}
-
-//         <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-//           Create
-//         </button>
-//       </form>
-
-//       <h2 className="text-xl font-semibold mb-2">All Instructors</h2>
-//       <ul className="space-y-2">
-//         {instructors.map((instructor) => (
-//           <li key={instructor._id} className="border p-2 rounded">
-//             <strong>{instructor.name}</strong> - {instructor.email}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
 "use client";
 import { useState } from "react";
 import {
   useGetInstructorsQuery,
   useCreateInstructorMutation,
 } from "../../../redux/features/lectureSchedulerApi";
+import Home from "@/app/components/home";
 
 export default function InstructorsPage() {
   const { data: instructors = [], isLoading, error } = useGetInstructorsQuery();
@@ -129,7 +51,10 @@ export default function InstructorsPage() {
 
   return (
     <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8 text-blue-600">
+      <h1 className="text-3xl flex font-bold text-center mb-8 text-blue-600">
+        <div className="mr-3">
+          <Home />
+        </div>
         Instructors Management
       </h1>
 
