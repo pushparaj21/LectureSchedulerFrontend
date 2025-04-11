@@ -4,7 +4,6 @@ import {
   useGetCoursesQuery,
   useCreateCourseMutation,
 } from "../../../redux/features/lectureSchedulerApi";
-import Home from "../../components/home";
 
 export default function CoursesPage() {
   const { data: courses = [], isLoading, error } = useGetCoursesQuery();
@@ -59,7 +58,9 @@ export default function CoursesPage() {
     <div className="p-6 max-w-3xl mx-auto">
       <h1 className="text-3xl flex font-bold text-center mb-8 text-blue-600">
         <div className="mr-3">
-          <Home />
+          <Link href={"/"} className="underline hover:bg-gray-400">
+            Home
+          </Link>
         </div>
         Course Management
       </h1>

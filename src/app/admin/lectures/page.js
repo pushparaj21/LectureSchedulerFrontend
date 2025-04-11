@@ -8,7 +8,6 @@ import {
   useCreateLectureMutation,
 } from "../../../redux/features/lectureSchedulerApi";
 import "react-toastify/dist/ReactToastify.css";
-import Home from "../../components/home";
 
 export default function LecturesPage() {
   const { data: instructors = [], isLoading: loadingInstructors } =
@@ -57,7 +56,9 @@ export default function LecturesPage() {
       <ToastContainer />
       <h1 className="text-3xl flex font-bold text-center mb-8 text-blue-600">
         <div className="mr-3">
-          <Home />
+          <Link href={"/"} className="underline hover:bg-gray-400">
+            Home
+          </Link>
         </div>{" "}
         Lecture Scheduler
       </h1>

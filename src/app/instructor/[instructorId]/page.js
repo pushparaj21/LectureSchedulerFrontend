@@ -1,5 +1,5 @@
 "use client";
-import Home from "@/app/components/home";
+
 import {
   useGetCoursesQuery,
   useGetInstructorsQuery,
@@ -29,9 +29,9 @@ export default function InstructorDashboard({ params }) {
   return (
     <div className="p-6 max-w-3xl mx-auto">
       <h1 className="text-3xl flex font-bold text-center mb-8 text-blue-600">
-        <div className="mr-3">
-          <Home />
-        </div>
+        <Link href={"/"} className="underline hover:bg-gray-400">
+          Home
+        </Link>
 
         {instructor?.name
           ? `${instructor.name}'s Schedule`
