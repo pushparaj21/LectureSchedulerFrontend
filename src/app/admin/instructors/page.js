@@ -4,7 +4,7 @@ import {
   useGetInstructorsQuery,
   useCreateInstructorMutation,
 } from "../../../redux/features/lectureSchedulerApi";
-import Home from "@/app/components/home";
+import Home from "../../components/home";
 
 export default function InstructorsPage() {
   const { data: instructors = [], isLoading, error } = useGetInstructorsQuery();

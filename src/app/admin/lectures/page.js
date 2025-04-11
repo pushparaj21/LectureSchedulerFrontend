@@ -8,7 +8,7 @@ import {
   useCreateLectureMutation,
 } from "../../../redux/features/lectureSchedulerApi";
 import "react-toastify/dist/ReactToastify.css";
-import Home from "@/app/components/home";
+import Home from "../../components/home";
 
 export default function LecturesPage() {
   const { data: instructors = [], isLoading: loadingInstructors } =
